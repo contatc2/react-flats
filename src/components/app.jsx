@@ -8,28 +8,32 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedFlat: "",
-      flats: flats
+      selectedFlat: flats[0],
+      flats
     };
   }
 
-  selectFlat = (flat) => {
+  selectFlat = (index) => {
     this.setState({
-      selectedFlat: flat
+      selectedFlat: flats[index]
     });
   }
 
   render () {
+    const { selectedFlat } = this.state;
     return (
       <div>
         <div className="flat-list">
           <FlatList
             flats={this.state.flats}
             selectFlat={this.selectFlat}
+            selectedFlat={selectedFlat}
           />
         </div>
         <div className="map-container">
-          <MapReact selectedFlat={this.state.selectedFlat} />
+          <MapReact
+            selectedFlat={selectedFlat}
+          />
         </div>
       </div>
     );

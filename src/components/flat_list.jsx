@@ -3,16 +3,15 @@ import React from 'react';
 import Flat from './flat';
 
 
-const FlatList = ({ flats, selectFlat }) => {
+const FlatList = ({ flats, selectFlat, selectedFlat }) => {
   return (
     flats.map(
-      flat => (
+      (flat, index) => (
         <Flat
-          price={flat.price}
-          priceCurrency={flat.priceCurrency}
-          imageUrl={flat.imageUrl}
-          name={flat.name}
-          key={flat.name}
+          flat={flat}
+          selected={flat.name === selectedFlat.name}
+          index={index}
+          key={flat.lat}
           selectFlat={selectFlat}
         />
       )
