@@ -7,8 +7,8 @@ import GM_API_KEY from './config_key';
 class MapReact extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 48.85,
+      lng: 2.35
     },
     zoom: 11
   };

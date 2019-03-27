@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 
 import FlatList from './flat_list';
 import MapReact from './map_react';
+import flats from '../../data/flats';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedFlat: ""
+      selectedFlat: "",
+      flats: flats
     };
   }
 
-  selectFlat = (index) => {
+  selectFlat = (flat) => {
     this.setState({
-      selectedFlat: index
+      selectedFlat: flat
     });
   }
 
@@ -21,10 +23,13 @@ class App extends Component {
     return (
       <div>
         <div className="flat-list">
-          <FlatList flats={this.props.flats} />
+          <FlatList
+            flats={this.state.flats}
+            selectFlat={this.selectFlat}
+          />
         </div>
         <div className="map-container">
-          <MapReact />
+          <MapReact selectedFlat={this.state.selectedFlat} />
         </div>
       </div>
     );

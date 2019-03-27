@@ -3,7 +3,7 @@ import React from 'react';
 import Flat from './flat';
 
 
-const FlatList = ({ flats }) => {
+const FlatList = ({ flats, selectFlat }) => {
   return (
     flats.map(
       flat => (
@@ -13,7 +13,7 @@ const FlatList = ({ flats }) => {
           imageUrl={flat.imageUrl}
           name={flat.name}
           key={flat.name}
-          // selectFlat={this.props.selectFlat}
+          selectFlat={selectFlat}
         />
       )
     )
