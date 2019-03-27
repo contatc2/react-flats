@@ -13,6 +13,7 @@ const FlatList = ({ flats }) => {
           imageUrl={flat.imageUrl}
           name={flat.name}
           key={flat.name}
+          // selectFlat={this.props.selectFlat}
         />
       )
     )

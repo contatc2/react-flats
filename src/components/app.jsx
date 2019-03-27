@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import FlatList from './flat_list';
 import MapReact from './map_react';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -12,9 +11,9 @@ class App extends Component {
     };
   }
 
-  selectFlat = (id) => {
+  selectFlat = (index) => {
     this.setState({
-      selectedFlat: id
+      selectedFlat: index
     });
   }
 
