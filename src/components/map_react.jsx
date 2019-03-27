@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 
 // import Marker from './marker';
 
-const APIKEY = 'AIzaSyDds79T_dX3-N-o7sDO4Y3v3ugSugQUCXA';
+const APIKEY = ;
 
 class MapReact extends Component {
   static defaultProps = {
